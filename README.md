@@ -1,4 +1,7 @@
-# Whole Genome Sequencing Structural Variation Pipeline
+# Whole Genome Sequencing Structural Variation Workflow
+
+This github repo was originially cloned from the NBISweeden/wgs-structvar found [here](https://github.com/NBISweden/wgs-structvar.git).
+
 
 ## Quick start
 
