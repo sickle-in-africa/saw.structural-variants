@@ -28,6 +28,7 @@ process indexBamFile {
 }
 
 process configureManta {
+	container params.mantaImage
 
 	input:
 	tuple path(bamFile), path(bamIndex)
@@ -45,6 +46,7 @@ process configureManta {
 }
 
 process callVariantsForEachSample {
+	container params.mantaImage
 
 	input:
 	path runDir 
@@ -57,6 +59,6 @@ process callVariantsForEachSample {
 	${runDir}/runWorkflow.py \
 		-m local \
 		-j ${params.nThreadsPerProcess}
-	gunzip -c ${runDir}/results/variants/diploidSV.vcf.gz > ${params.outputDir}manta.vcf
+	mv -f ${runDir}/results/* ${params.outputDir}/
 	"""
 }
